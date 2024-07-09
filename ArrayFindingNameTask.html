@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Finding Name Task</h1>
+
+    <script>
+
+
+let x = "a";
+
+let arr = ["Sneha","Siya","Kavita","Vishakha","Shailaja","Prasad","Sameer","Miheer"];
+let output = [];
+// let output = new Array();
+
+
+for(let i=0;i<arr.lenth;i++){
+    console.log(arr[i]);
+
+
+    let count = 0;
+    for(j=0;j<arr[i].length;j++) {
+        console.log(arr[i][j]);
+
+
+        if(arr[i][j].toLowerCase() === x) {
+            console.log(arr[i]);
+        count++
+    }
+
+    if (count >=2) {
+        console.log(arr[i]);
+        output.push(arr[i])
+        break;
+    }
+ }
+
+};
+
+console.log(output);
+
+
+    </script>
+</body>
+</html>

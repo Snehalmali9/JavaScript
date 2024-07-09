@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie</title>
+</head>
+<body>
+    <h1>Cookie CRD</h1>
+    
+    <button onclick="CreateCookie">Create</button>
+    <button onclick="ReadCookie">Read</button>
+    <button onclick="DeleteCookie">Delete</button>
+
+
+    <script>
+
+
+function CreateCookie(){
+    document.cookie("Name = Ram");
+    document.cookie("Products = Hair-Accessories");
+}
+
+function ReadCookie(){
+    let s = document.cookie;
+    console.log(s);
+}
+
+
+    </script>
+
+</body>
+</html>

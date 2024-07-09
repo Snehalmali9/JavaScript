@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+
+    <h1>Digital Watch</h1>
+    <h1 id="clock"></h1>
+
+    <script>
+
+
+
+        setInterval(() => {
+            let dt = new Date();
+            // console.log(dt);
+
+
+
+
+            console.log("Time ___________");
+            let hr = dt.getHours().toString().padStart(2, "0");
+            let min = dt.getMinutes().toString().padStart(2, "0");
+            let sec = dt.getSeconds().toString().padStart(2, "0");
+
+            // console.log(`${hr}:${min}:${sec}`);
+
+            document.getElementById("clock").innerHTML = `${hr}:${min}:${sec}`;
+        }, 1000)
+
+
+        function myClock() {
+            // console.log(myClock);
+
+        }
+        
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

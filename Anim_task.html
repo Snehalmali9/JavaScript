@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anim Task</title>
+    <style>
+        div {
+            margin-left: 350px;
+            width: 570px;
+            height: 570px;
+            position: relative;
+            border: solid black;
+            background-color: aquamarine;
+        }
+
+        .btn {
+            padding: 34px;
+            position: absolute;
+        }
+
+        .btn1 {
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+
+        .btn2 {
+            background-color: green;
+            top: 0;
+            right: 0;
+        }
+
+        .btn3 {
+            background-color: yellow;
+            bottom: 0;
+            left: 0;
+        }
+
+        .btn4 {
+            background-color: pink;
+            bottom: 0;
+            right: 0;
+        }
+
+        .start {
+            color: white;
+            font-weight: bold;
+            background-color: green;
+            padding: 10px 20px;
+        }
+
+        .stop {
+            color: white;
+            font-weight: bold;
+            background-color: red;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <button class="start" onclick="start()">Start</button>
+    <button class="stop" onclick="stop()">stop</button>
+
+    <div>
+        <button onclick="" class="btn btn1" id="btn1"></button>
+        <button onclick="" class="btn btn2" id="btn2"></button>
+        <button onclick="" class="btn btn3" id="btn3"></button>
+        <button onclick="" class="btn btn4" id="btn4"></button>
+
+    </div>
+
+
+    <script>
+
+
+        function start() {
+            let count1 = 0;
+            let myInterval = setInterval(function () {
+                count1 += 50;
+                if (count1 === 500) {
+                    clearInterval(myInterval)
+                    document.getElementById('btn1').style.backgroundColor = "green";
+                }
+                document.getElementById('btn1').style.marginTop = count1 + "px";
+                document.getElementById('btn1').style.marginLeft = count1 + "px";
+
+            }, 1000)
+
+            let count2 = 0;
+            let myInterval2 = setInterval(function () {
+                count2 += 50;
+                if (count2 === 500) {
+                    clearInterval(myInterval2)
+                    document.getElementById('btn2').style.backgroundColor = "green";
+                }
+                document.getElementById('btn2').style.marginTop = count2 + "px";
+                document.getElementById('btn2').style.marginRight = count2 + "px";
+
+            }, 1000)
+
+            let count3 = 0;
+            let myInterval3 = setInterval(function () {
+                count3 += 50;
+                if (count3 === 500) {
+                    clearInterval(myInterval3)
+                    document.getElementById('btn3').style.backgroundColor = "green";
+                }
+                document.getElementById('btn3').style.marginBottom = count3 + "px";
+                document.getElementById('btn3').style.marginLeft = count3 + "px";
+
+            }, 1000)
+
+            let count4 = 0;
+            let myInterval4 = setInterval(function () {
+                count4 += 50;
+                if (count4 === 500) {
+                    clearInterval(myInterval4)
+                    document.getElementById('btn4').style.backgroundColor = "green";
+                }
+                document.getElementById('btn4').style.marginBottom = count4 + "px";
+                document.getElementById('btn4').style.marginRight = count4 + "px";
+
+            }, 1000)
+        }
+        function stop() {
+            clearInterval(myInterval)
+        };
+
+
+    </script>
+
+</body>
+
+</html>

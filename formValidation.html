@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Data</title>
+    <link rel="stylesheet" href="Assets/bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="Assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+
+    <style>
+        div{
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        div p{
+            font-weight: bolder;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+        }
+        div,td{
+            font-weight: bolder;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    
+   <div>
+    <p>Name</p>
+    <input type="text" id="name"><br><br>
+    <p>Surname</p>
+    <input type="text" id="surname"><br><br>
+    <p>City</p>
+    <input type="text" id="city"><br><br>
+    <p>Contact No.</p>
+    <input type="text" id="contact"><br><br>
+
+    <button class="btn-primary" onclick="data()" id="btn" style="background-color: blue;">Submit</button>
+   </div>
+
+   <div>
+    <table class="table table-bordered" id="newtable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>City</th>
+                <th>Contact No.</th>
+            </tr>
+        </thead>
+    </table>
+   </div>
+
+   <script>
+    arr = [];
+    function data(){
+        var name = document.getElementById('name').value;
+        // console.log(name);
+        var surname = document.getElementById('surname').value;
+        // console.log(surname);
+        var city = document.getElementById('city').value;
+        // console.log(city);
+        var contact = document.getElementById('contact').value;
+        // console.log(contact);
+
+
+        var newtable = document.getElementById('newtable');
+
+        var row = "<tr>";
+            row += "<td>"+ name + "</td>";
+            row += "<td>"+ surname + "</td>";
+            row += "<td>" + city + "</td>";
+            row += "<td>" + contact + "</td>";
+            row += "</tr>";
+
+            newtable.innerHTML += row;
+    };
+   </script>
+</body>
+</html>

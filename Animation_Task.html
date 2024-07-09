@@ -1,0 +1,119 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation_JS_Task</title>
+    <style>
+        #container{
+            width: 500px;
+            height: 500px;
+            position: relative;
+            background-color: paleturquoise;
+        }
+        /* #animate1{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            background-color: red;
+            top: 0;
+        } */
+        #animate{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    
+
+    <body onload="move()">
+        
+
+        <p>
+            <button onclick="move()">Start</button>
+        </p>
+
+        <div id="container">
+            <div id="animate"></div>
+        </div>
+
+        <div id="container1">
+            <div id="animate1"></div>
+        </div>
+    </body>
+
+    <script>
+
+
+         function move(){
+            var box = document.getElementById("animate");
+            var Top = 0;
+            var Left = 0;
+            var id = setInterval(frame, 5);
+
+            function frame(){
+                Top++;
+                Left++;
+
+                if(Top === 350)
+                {
+                    while(Top > 0)
+                    {
+                        top--;
+                    }
+                }
+
+                if(Left === 350)
+                {
+                    while(Left > 0)
+                    {
+                        Left--;
+                    }
+                }
+
+                box.style.top = Top + 'px';
+                box.style.top = Left + 'px';
+
+            }
+         }
+
+
+         function move(){
+            var box = document.getElementById("animate");
+            var Top = 0;
+            var Left = 0;
+            var id = setInterval(frame, 5);
+
+            function frame(){
+                Top++;
+                Left++;
+
+                if(Top === 350)
+                {
+                    while(Top > 0)
+                    {
+                        top--;
+                    }
+                }
+
+                if(Left === 350)
+                {
+                    while(Left > 0)
+                    {
+                        Left--;
+                    }
+                }
+
+                box.style.top = Top + 'px';
+                box.style.top = Left + 'px';
+
+            }
+         }
+
+    </script>
+</body>
+</html>

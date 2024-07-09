@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+     <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="">
+                       <!-- <div class="card-bg-info"> -->
+                          <div class="card-body">
+                             <h5 class="card-title">"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"</h5>
+                             <p class="card-text">"Some quick example text to build on the card title and make up the bulk of the card's content."</p>
+
+                             <a href class="btn btn-primary">Buy Now</a>
+                          </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+</body>
+
+<script>
+
+    var newData = new Array();
+
+function loadData() {
+    let url = "https://fakestoreapi.com/products";
+    fetch(url)
+    .then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new console.Error("Page Not Found");
+        }
+    })
+    .then((data) => {
+
+       // console.log(data);
+        newData = data; //Assigning the fetched data to the NewData array
+    })
+    
+let newData = data.map((eachData)=>{
+    return (
+        `
+        <div class="col-lg-3">
+                <div class="card">
+                    <img src=${eachData.image} class="card-img-top" alt="...">
+                          <div class="card-body">
+                             <h5 class="card-title">${eachData.title}</h5>
+                             <p class="card-text">"Some quick example text to build on the card title and make up the bulk of the card's content."</p>
+                             <a href class="btn btn-primary">Buy Now</a>
+                          </div>
+                </div>
+            </div>
+            `
+            )
+})
+
+document.getElementById("card-row").innerHTML += newData.join("");
+.catch((error) => {
+        console.error(error);
+    });
+}
+
+
+</script>
+
+</html>

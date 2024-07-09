@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Inside Function</title>
+</head>
+
+<body>
+    <h1>Function Inside Function</h1>
+
+    <script>
+
+
+        // function del() {
+        //     function parent1() {
+        //         console.log("Hello Snehal:)");
+        //     };
+
+        //     const childA = function () {
+        //         console.log("Where Are You?");
+        //     };
+
+        //     parent1();
+        //     childA();
+
+        // };
+
+        // del();
+
+
+        function get(){
+            function parentA(){
+                console.log("Snehal Mali");
+            };
+
+            const ParentB = function(n)
+            {
+                console.log("Fullstack Dev." +" "+n);
+            };
+
+            const ChildC = (A,B) => {
+                return A*B
+            };
+
+            console.log("get function");
+            parentA();
+            ParentB("At iGAP Tech.");
+
+            let output = ChildC(4,10);
+
+            console.log(output);
+        };
+
+        get();
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

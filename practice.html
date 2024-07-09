@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+
+
+<body style="text-align: left;">
+    <h1>Form Validation</h1>
+
+    <label for="">Name <span style="color: red;">* </span><span class="error" id="nameError">All Fileds are
+            Mandatory</span></label><br>
+    <input type="text" id="name"><br><br>
+
+    <label for="">Surname <span style="color: red;">* </span><span class="error" id="surnameError">All Fileds are
+            Mandatory</span></label><br>
+    <input type="text" id="surname"><br><br>
+
+    <label for="">City <span style="color: red;">* </span><span class="error" id="cityError">All Fileds are
+            Mandatory</span></label><br>
+    <input type="text" id="city"><br><br>
+
+    <label for="">Contact <span style="color: red;">* </span><span class="error" id="contactError">All Fileds are
+            Mandatory</span></label><br>
+    <input type="text" id="contact"><br><br>
+
+    <button onclick="submit()">Submit</button><br><br>
+
+    <table border="2px" align="left" style="padding: 10px; border: solid; border-collapse: collapse;">
+        <tr border="2px">
+            <td align="center" height="100" width="400">Name</td>
+            <td align="center" height="100" width="400">Surname</td>
+            <td align="center" height="100" width="400">City</td>
+            <td align="center" height="100" width="400">Contact</td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        function submit() {
+            let name = document.getElementById("name").value;
+            let surname = document.getElementById("surname").value;
+            let city = document.getElementById("city").value;
+            let contact = document.getElementById("contact").value;
+
+            document.getElementById("nameError").style.display = "none";
+            document.getElementById("surnameError").style.display = "none";
+            document.getElementById("cityError").style.display = "none";
+            document.getElementById("contactError").style.display = "none";
+            //    console.log(name, surname, city, contact);
+
+            if (name === "") {
+                document.getElementById("nameError").style.display = "block";
+            }
+            if (surname === "") {
+                document.getElementById("surnameError").style.display = "block";
+            }
+            if (city === "") {
+                document.getElementById("cityError").style.display = "block";
+            }
+            if (contact === "") {
+                document.getElementById("contactError").style.display = "block";
+            }
+
+            
+
+        //     function data(){
+        //     var name = document.getElementById("name").value;
+            
+        //     var surname = document.getElementById("surname").value;
+           
+        //     var city = document.getElementById("city").value;
+            
+        //     var contact = document.getElementById("contact").value;
+           
+        // };
+        // data();
+
+      <button class="btn-success" onclick="data()" id="btn">Submit</button>
+
+        arr = [];
+    function data(){
+        var name = document.getElementById('name').value;
+        console.log(name);
+        var surname = document.getElementById('surname').value;
+        console.log(surname);
+        var city = document.getElementById('city').value;
+        console.log(city);
+        var contact = document.getElementById('contact').value;
+        console.log(contact);
+
+
+        var newtable = document.getElementById('newtable');
+
+        var row = "<tr>";
+            row += "<td>"+ name + "</td";
+            row += "<td>"+ surname + "</td>";
+            row += "<td>" + city + "</td>";
+            row += "<td>" + contact + "</td>";
+            row += "</tr>";
+
+            newtable.innerHTML += row;
+    };
+    }
+        
+
+
+
+    </script><br>
+
+    
+
+
+</body>
+
+</html>
